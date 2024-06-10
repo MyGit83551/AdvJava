@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
-  <display-name>electionservlets</display-name>
+  <display-name>electionVote</display-name>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
     <welcome-file>index.htm</welcome-file>
@@ -44,8 +44,8 @@
   	<servlet-name>Logout</servlet-name>
   	<url-pattern>/logout</url-pattern>
   </servlet-mapping>
-
-  <servlet>
+  
+   <servlet>
   	<servlet-name>Result</servlet-name>
   	<servlet-class>com.sunbeam.servlets.ResultServlet</servlet-class>
   </servlet>
@@ -54,35 +54,17 @@
   	<url-pattern>/result</url-pattern>
   </servlet-mapping>
   
-  <filter>
-  	<filter-name>Security</filter-name>
-  	<filter-class>com.sunbeam.filters.SecurityFilter</filter-class>
-  </filter>
-  <filter-mapping>
-  	<filter-name>Security</filter-name>
-  	<url-pattern>/candlist</url-pattern>
-  	<url-pattern>/vote</url-pattern>
-  	<url-pattern>/logout</url-pattern>
-  	<url-pattern>/result</url-pattern>
-  	<url-pattern>/delcand</url-pattern>
-  	<url-pattern>/editcand</url-pattern>
-  	<url-pattern>/announce*</url-pattern>
-  </filter-mapping>
-
-	<listener>
-		<listener-class>com.sunbeam.listeners.AppSessionListener</listener-class>
-	</listener>
-
-	<context-param>
-  		<param-name>AppTitle</param-name>
-  		<param-value>Bharat - Online Voting</param-value>
-	</context-param>
-	
-	<session-config>
-		<session-timeout>5</session-timeout>
-		<cookie-config>
-			<name>SID</name>
-		</cookie-config>
-		<tracking-mode>COOKIE</tracking-mode>
-	</session-config>
+  <context-param>
+  	<param-name>AppTitle</param-name>
+  	<param-value>Bharat - Online Voting</param-value>
+  </context-param>
+  
+  <session-config>
+  <session-timeout>5</session-timeout>
+  <cookie-config>
+           <name>SID</name>
+  </cookie-config>
+ 
+  <tracking-mode>COOKIE</tracking-mode>
+  </session-config>
 </web-app>
