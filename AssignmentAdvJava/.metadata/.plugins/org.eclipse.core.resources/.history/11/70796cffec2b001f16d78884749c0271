@@ -1,0 +1,26 @@
+package com.sunbeam.dao;
+
+import com.sunbeam.entities.Product;
+import org.hibernate.*;
+import static com.sunbeam.utils.HibernateUtils.getfactory;
+
+import java.io.Serializable;
+
+public class ProductDaoImpl implements ProductDao {
+
+	@Override
+	public String addProduct(Product product) {
+		String msg="Product registration failed....!!!";
+		Session sesion=getfactory().getCurrentSession();
+		Transaction tx=session.beginTransaction();
+		
+		return null;
+	}
+
+	@Override
+	public Product getProductById(Long Id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

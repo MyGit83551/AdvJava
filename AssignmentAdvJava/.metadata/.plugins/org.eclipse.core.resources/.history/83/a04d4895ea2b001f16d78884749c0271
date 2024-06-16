@@ -1,0 +1,21 @@
+package com.sunbeam.entities;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name="products")
+public class Product {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	@Enumerated(EnumType.STRING) //col type : varchar
+	@Column(length = 20)
+	private Category category;
+	@Column(name="product_name",length = 25,unique=true)
+	private String productname;
+	@Column(name="price")
+	private double price;
+	
+	private int availablequantity;
+
+}
